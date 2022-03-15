@@ -1,17 +1,15 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { TranslateModule } from '@ngx-translate/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from '@app/material.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 import { AuthenticationService, CredentialsService } from '@app/auth';
 import { MockAuthenticationService } from '@app/auth/authentication.service.mock';
 import { MockCredentialsService } from '@app/auth/credentials.service.mock';
-
 import { I18nModule } from '@app/i18n';
-import { ShellComponent } from './shell.component';
+import { MaterialModule } from '@app/material.module';
+import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from './header/header.component';
+import { ShellComponent } from './shell.component';
 
 describe('ShellComponent', () => {
   let component: ShellComponent;
