@@ -1,0 +1,9 @@
+@import "src/theme/theme-variables";
+
+:host {
+  display: block;
+}
+
+footer {
+  background: $blue1;
+}

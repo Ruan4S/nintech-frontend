@@ -1,17 +1,17 @@
-<mat-sidenav-container fxFill>
-  <mat-sidenav mode="over" ngClass.gt-sm="has-border">
-    <nav>
-      <mat-list>
-        <mat-divider></mat-divider>
-        <a mat-list-item routerLink="/home" routerLinkActive="active">
-          <span translate>Home</span>
-        </a>
-        <mat-divider></mat-divider>
-        <a mat-list-item routerLink="/about" routerLinkActive="active">
-          <span translate>About</span>
-        </a>
-        <mat-divider></mat-divider>
-      </mat-list>
-    </nav>
-  </mat-sidenav>
-</mat-sidenav-container>
+<nav>
+  <a routerLink="">
+    <img src="" alt="Logo" />
+  </a>
+
+  <ul>
+    <li>
+      <a mat-button Fragment="como-funciona" active="active"> Como funciona </a>
+    </li>
+    <li>
+      <a mat-button routerLink="/freelancers" active="active"> Freelancers </a>
+    </li>
+    <li>
+      <a mat-button routerLink="/projetos" active="active"> Projetos </a>
+    </li>
+  </ul>
+</nav>
