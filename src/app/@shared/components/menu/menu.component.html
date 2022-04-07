@@ -1,17 +1,25 @@
 <nav>
-  <a routerLink="">
-    <img src="" alt="Logo" />
-  </a>
+  <div class="container">
+    <div class="main-links">
+      <a routerLink="" class="logo" matTooltip="Ir para o início">
+        <img src="assets/nintech-preto.png" alt="Nintech" />
+      </a>
+      <ul>
+        <li>
+          <a mat-button routerLink="/" fragment="como-funciona"> <mat-icon>quiz</mat-icon> Como funciona </a>
+        </li>
+        <li>
+          <a mat-button routerLink="/freelancers"> <mat-icon>person_search</mat-icon> Freelancers </a>
+        </li>
+        <li>
+          <a mat-button routerLink="/projetos"> <mat-icon>cases</mat-icon> Projetos </a>
+        </li>
+      </ul>
+    </div>
 
-  <ul>
-    <li>
-      <a mat-button Fragment="como-funciona" active="active"> Como funciona </a>
-    </li>
-    <li>
-      <a mat-button routerLink="/freelancers" active="active"> Freelancers </a>
-    </li>
-    <li>
-      <a mat-button routerLink="/projetos" active="active"> Projetos </a>
-    </li>
-  </ul>
+    <div class="access-links">
+      <a mat-button routerLink="/login"> <mat-icon>login</mat-icon> Login </a>
+      <a mat-button routerLink="/cadastro"> <mat-icon>note_add</mat-icon> Cadastre-se </a>
+    </div>
+  </div>
 </nav>

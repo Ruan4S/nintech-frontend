@@ -18,6 +18,7 @@ const log = new Logger('App');
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
+  isLoading: boolean = true;
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -56,9 +57,13 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe((event) => {
         const title = event['title'];
         if (title) {
-          this.titleService.setTitle(this.translateService.instant(title));
+          this.titleService.setTitle(`${title} | NinTech`);
         }
       });
+
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1000);
   }
 
   ngOnDestroy() {

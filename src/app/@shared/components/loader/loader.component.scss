@@ -1,8 +1,21 @@
+@import "src/theme/theme-variables";
+
+:host {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: rgba($color: $gray1, $alpha: 0.5);
+  z-index: 998;
+}
+
 .mat-progress-spinner {
   display: inline-block;
   vertical-align: middle;
-}
-
-.message {
-  margin-left: 0.5em;
 }

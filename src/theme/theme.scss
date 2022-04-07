@@ -4,6 +4,8 @@
  */
 
 // stylelint-disable-next-line selector-max-universal
+@import "theme-variables.scss";
+
 * {
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
@@ -18,4 +20,77 @@ html {
 ul,
 ol {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $gray1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $blue6;
+}
+
+// XXX: Estilo loader
+.mat-progress-spinner circle {
+  stroke: $blue4;
+}
+
+// XXX: Mostra apenas 1 mat-error por vez
+mat-error + mat-error {
+  display: none;
+}
+
+.error {
+  border-bottom: 2px solid #e63946;
+  text-align: start;
+  color: #e63946;
+  font-weight: 600;
+  padding: 0.4rem 0;
+  margin-bottom: 0.6rem;
+}
+
+.mat-raised-button {
+  background-color: $blue5;
+  color: $white;
+  font-weight: bold;
+  transition: ease 0.3s;
+
+  &:hover {
+    background-color: $blue1;
+  }
+}
+
+// XXX: Alinhando links do menu com mat-icon
+app-menu {
+  .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+
+    mat-icon {
+      margin-right: 5px;
+    }
+  }
 }

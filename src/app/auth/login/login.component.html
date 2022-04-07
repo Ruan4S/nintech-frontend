@@ -1,0 +1,56 @@
+<a routerLink="/" class="logo">
+  <img src="assets/nintech-preto.png" alt="Nintech" matTooltip="Ir para o início" />
+</a>
+<div class="login-box">
+  <div class="form">
+    <h1 class="title">Entrar</h1>
+    <form (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
+      <div class="error" [hidden]="error || !isLoading">Usuário ou senha incorreta.</div>
+      <mat-form-field appearance="outline">
+        <mat-label>Usuário</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="username"
+          autocomplete="username"
+          placeholder="Insira seu usuário"
+        />
+        <mat-error *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
+          <span>O usuário é obrigatório</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input
+          [type]="inputType"
+          matInput
+          formControlName="password"
+          autocomplete="current-password"
+          placeholder="********"
+        />
+        <mat-error *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
+          <span>A senha é obrigatória</span>
+        </mat-error>
+        <app-input-password-suffix [(type)]="inputType" matSuffix></app-input-password-suffix>
+      </mat-form-field>
+      <div class="bottom-links">
+        <a routerLink="/login">Esqueceu sua senha?</a>
+        <a routerLink="/cadastro">Cadastre-se</a>
+      </div>
+      <button mat-raised-button type="submit" [disabled]="loginForm.invalid">
+        <span>Entrar</span>
+      </button>
+    </form>
+  </div>
+  <div class="additional-text">
+    <h2>Olá, amigo(a)</h2>
+    <p>
+      Informe seu e-mail e senha<br />
+      para entrar na plataforma.
+    </p>
+  </div>
+</div>
+<div class="background">
+  <img src="assets/login/banner1.svg" alt="" />
+  <img src="assets/login/banner2.svg" alt="" />
+</div>

@@ -4,15 +4,44 @@
   display: block;
 }
 
-nav {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  background: $blue1;
 }
 
-ul {
+.logo {
+  margin-right: 2rem;
+  img {
+    max-width: 200px;
+  }
+}
+
+.main-links {
+  display: flex;
+  align-items: center;
+
+  ul {
+    display: flex;
+    gap: 10px;
+
+    li {
+      color: $black;
+
+      a {
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+
+.access-links {
   display: flex;
   gap: 10px;
+
+  a {
+    color: $black;
+    padding: 5px 10px;
+    min-width: unset;
+  }
 }

@@ -9,6 +9,8 @@ import { AuthModule } from '@app/auth';
 import { environment } from '@env/environment';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApiPrefixInterceptor, ErrorHandlerInterceptor, RouteReusableStrategy, SharedModule } from '@shared';
+import { LoaderComponent } from '@shared';
+import { NgBusyModule } from 'ng-busy';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
@@ -29,6 +31,11 @@ import { ShellModule } from './shell/shell.module';
     ShellModule,
     HomeModule,
     AuthModule,
+    NgBusyModule.forRoot({
+      minDuration: 1000,
+      template: LoaderComponent,
+      disableAnimation: true,
+    }),
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],

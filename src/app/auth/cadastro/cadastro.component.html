@@ -1,0 +1,68 @@
+<a routerLink="/" class="logo">
+  <img src="assets/nintech-preto.png" alt="Nintech" matTooltip="Ir para o início" />
+</a>
+<div class="box">
+  <div class="form">
+    <h1 class="title">Cadastre-se</h1>
+    <form [formGroup]="cadastroForm" novalidate>
+      <mat-form-field appearance="outline">
+        <mat-label>Nome Completo</mat-label>
+        <input type="text" matInput formControlName="name" placeholder="Insira seu nome completo" />
+        <mat-error *ngIf="cadastroForm.controls['name'].invalid">
+          <span>O nome completo é obrigatório</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input type="text" matInput formControlName="email" placeholder="Insira seu e-mail" />
+        <mat-error *ngIf="cadastroForm.controls['email'].invalid">
+          <span>O e-mail é obrigatório</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Confirme seu e-mail</mat-label>
+        <input type="text" matInput formControlName="emailConfirmation" placeholder="Confirme seu e-mail" />
+        <mat-error *ngIf="cadastroForm.controls['emailConfirmation'].invalid">
+          <span>O e-mail é obrigatório</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Senha</mat-label>
+        <input [type]="inputTypePassword" matInput formControlName="password" placeholder="********" />
+        <mat-error *ngIf="cadastroForm.controls['password'].invalid">
+          <span>A senha é obrigatório</span>
+        </mat-error>
+        <app-input-password-suffix [(type)]="inputTypePassword" matSuffix></app-input-password-suffix>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Confirme sua senha</mat-label>
+        <input
+          [type]="inputTypePasswordConfirmation"
+          matInput
+          formControlName="passwordConfirmation"
+          placeholder="********"
+        />
+        <mat-error *ngIf="cadastroForm.controls['passwordConfirmation'].invalid">
+          <span>A senha é obrigatório</span>
+        </mat-error>
+        <app-input-password-suffix [(type)]="inputTypePasswordConfirmation" matSuffix></app-input-password-suffix>
+      </mat-form-field>
+      <div class="bottom-links">
+        <a routerLink="/login">Já possui cadastro? Acesse agora</a>
+      </div>
+      <button mat-raised-button type="submit" [disabled]="cadastroForm.invalid">Entrar</button>
+    </form>
+  </div>
+  <div class="additional-text">
+    <h2>Olá, amigo(a)</h2>
+    <p>
+      Informe seus dados e<br />
+      comece a buscar o serviço<br />
+      ou profissional ideal para você.
+    </p>
+  </div>
+</div>
+<div class="background">
+  <img src="assets/login/banner1.svg" alt="" />
+  <img src="assets/login/banner2.svg" alt="" />
+</div>
