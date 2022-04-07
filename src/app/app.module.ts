@@ -8,8 +8,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AuthModule } from '@app/auth';
 import { environment } from '@env/environment';
 import { TranslateModule } from '@ngx-translate/core';
-import { ApiPrefixInterceptor, ErrorHandlerInterceptor, RouteReusableStrategy, SharedModule } from '@shared';
-import { LoaderComponent } from '@shared';
+import {
+  ApiPrefixInterceptor,
+  ErrorHandlerInterceptor,
+  LoaderComponent,
+  RouteReusableStrategy,
+  SharedModule,
+} from '@shared';
 import { NgBusyModule } from 'ng-busy';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

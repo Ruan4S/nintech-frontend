@@ -35,6 +35,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@angular/service-worker": "~13.1.0",
+    "@bugsplat/ngx-animated-counter": "^2.0.0",
     "@ngx-translate/core": "^14.0.0",
     "date-fns": "^2.16.1",
     "lodash": "^4.17.20",
