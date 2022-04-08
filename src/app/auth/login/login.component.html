@@ -8,26 +8,14 @@
       <div class="error" [hidden]="error || !isLoading">Usuário ou senha incorreta.</div>
       <mat-form-field appearance="outline">
         <mat-label>Usuário</mat-label>
-        <input
-          type="text"
-          matInput
-          formControlName="username"
-          autocomplete="username"
-          placeholder="Insira seu usuário"
-        />
+        <input type="text" matInput formControlName="username" placeholder="Insira seu usuário" />
         <mat-error *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">
           <span>O usuário é obrigatório</span>
         </mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Senha</mat-label>
-        <input
-          [type]="inputType"
-          matInput
-          formControlName="password"
-          autocomplete="current-password"
-          placeholder="********"
-        />
+        <input [type]="inputType" matInput formControlName="password" placeholder="********" />
         <mat-error *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">
           <span>A senha é obrigatória</span>
         </mat-error>
