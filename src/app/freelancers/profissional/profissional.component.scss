@@ -1,0 +1,122 @@
+@import "src/theme/theme-variables";
+
+:host {
+  display: flex;
+  gap: 2rem;
+  padding: 1.3rem;
+  background: rgba($color: $blue1, $alpha: 0.05);
+}
+
+.right {
+  min-width: 25%;
+}
+
+.personal-data {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 1rem;
+    border: 1.5px solid $white;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .name-container {
+    .name {
+      display: block;
+      font-size: 2rem;
+    }
+
+    .role {
+      font-style: italic;
+    }
+
+    .rating {
+      margin-top: 0.5rem;
+
+      svg path {
+        fill: rgba($color: $gray1, $alpha: 0.2);
+      }
+
+      &.one {
+        svg.first path {
+          fill: $yellow;
+        }
+      }
+
+      &.two {
+        svg.first path,
+        svg.second path {
+          fill: $yellow;
+        }
+      }
+
+      &.three {
+        svg.first path,
+        svg.second path,
+        svg.third path {
+          fill: $yellow;
+        }
+      }
+
+      &.four {
+        svg.first path,
+        svg.second path,
+        svg.third path,
+        svg.fourth path {
+          fill: $yellow;
+        }
+      }
+
+      &.five {
+        svg path {
+          fill: $yellow;
+        }
+      }
+    }
+  }
+}
+
+.infos {
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.habilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+
+  .card {
+    background: $blue3;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: $white;
+    font-weight: bold;
+  }
+}
+
+.hire-button {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.additional-infos {
+  span {
+    font-weight: bold;
+  }
+}

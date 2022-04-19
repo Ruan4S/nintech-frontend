@@ -63,6 +63,7 @@ mat-error + mat-error {
   display: none;
 }
 
+// XXX: Msgs de erro personalizadas
 .error {
   border-bottom: 2px solid #e63946;
   text-align: start;
@@ -72,6 +73,7 @@ mat-error + mat-error {
   margin-bottom: 0.6rem;
 }
 
+// XXX: Padrão de botões da page
 .mat-raised-button {
   background-color: $blue5;
   color: $white;
@@ -92,5 +94,24 @@ app-menu {
     mat-icon {
       margin-right: 5px;
     }
+  }
+}
+
+// XXX: Estilo diferente para botão de grupo checado
+mat-button-toggle {
+  &.mat-button-toggle-checked,
+  &:hover {
+    background: $blue1 !important;
+  }
+
+  .mat-button-toggle-focus-overlay {
+    border: none !important;
+  }
+}
+
+mat-checkbox {
+  &.mat-checkbox-checked .mat-checkbox-background,
+  .mat-ripple-element {
+    background: $blue3 !important;
   }
 }
