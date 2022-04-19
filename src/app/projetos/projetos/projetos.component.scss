@@ -1,0 +1,21 @@
+@import "src/theme/theme-variables";
+
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+app-filtro {
+  float: left;
+  margin-right: 2rem;
+}
+
+.freelancers {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

@@ -1,0 +1,60 @@
+@import "src/theme/theme-variables";
+
+:host {
+  display: flex;
+  gap: 2rem;
+  padding: 1.3rem;
+  background: rgba($color: $blue1, $alpha: 0.05);
+}
+
+.right {
+  min-width: 25%;
+}
+
+.project-data {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .name-container {
+    .name {
+      display: block;
+      font-size: 2rem;
+    }
+
+    .information-summary {
+      font-style: italic;
+    }
+  }
+}
+
+.infos {
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.habilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+
+  .card {
+    background: $blue3;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: $white;
+    font-weight: bold;
+  }
+}
+
+.proposed-button {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.additional-infos {
+  span {
+    font-weight: bold;
+  }
+}
