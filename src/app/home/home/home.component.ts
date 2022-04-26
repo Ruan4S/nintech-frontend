@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxAnimatedCounterParams } from '@bugsplat/ngx-animated-counter';
+import { FreelancerApiService } from '@app/@shared/services/freelancer-api.service';
+import { ProjectApiService } from '@app/@shared/services/project-api.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,14 @@ import { NgxAnimatedCounterParams } from '@bugsplat/ngx-animated-counter';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  freelancersParams: NgxAnimatedCounterParams = { start: 0, end: 1547, increment: 7, interval: 10 };
-  projectParams: NgxAnimatedCounterParams = { start: 0, end: 6903, increment: 13, interval: 10 };
-  usersParams: NgxAnimatedCounterParams = { start: 0, end: 402, interval: 10 };
+  public registeredFreelancers: number = 0;
+  public allProjects: number = 0;
+  public onlineUsers: number = 0;
 
-  constructor() {}
+  constructor(private readonly freelancerApi: FreelancerApiService, private readonly projectApi: ProjectApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.freelancerApi.getFreelancers().subscribe((result) => (this.registeredFreelancers = result.length));
+    this.projectApi.getProjects().subscribe((result) => (this.allProjects = result.length));
+  }
 }

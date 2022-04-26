@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProfessionalModel } from '@app/@shared/models/professional.model';
 
 @Component({
   selector: 'app-profissional',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profissional.component.scss'],
 })
 export class ProfissionalComponent implements OnInit {
+  @Input() profissional: ProfessionalModel;
+
   constructor() {}
 
   ngOnInit(): void {}

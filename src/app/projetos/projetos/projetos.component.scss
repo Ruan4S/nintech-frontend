@@ -1,6 +1,7 @@
 @import "src/theme/theme-variables";
 
 :host {
+  position: relative;
   display: block;
   min-height: 100vh;
 }

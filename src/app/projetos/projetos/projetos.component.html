@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngBusy]="busy$">
   <mat-form-field>
     <mat-label>Buscar</mat-label>
     <input type="text" matInput placeholder="Lorem ipsum" />
@@ -7,12 +7,7 @@
   <div class="content">
     <app-filtro></app-filtro>
     <div class="freelancers">
-      <app-projeto></app-projeto>
-      <app-projeto></app-projeto>
-      <app-projeto></app-projeto>
-      <app-projeto></app-projeto>
-      <app-projeto></app-projeto>
-      <app-projeto></app-projeto>
+      <app-projeto [project]="project" *ngFor="let project of projects"></app-projeto>
     </div>
   </div>
 </div>

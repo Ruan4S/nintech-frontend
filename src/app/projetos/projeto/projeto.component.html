@@ -1,25 +1,20 @@
 <div class="left">
   <div class="project-data">
     <div class="name-container">
-      <strong class="name">Site p/ petshop</strong>
+      <strong class="name">{{ project.name }}</strong>
       <p class="information-summary">
-        <strong>Publicado: </strong>há 11 horas | <strong>Prazo de entrega: </strong>25/03/2022 |
-        <strong>Propostas: </strong>10
+        <strong>Publicado: </strong>{{ project.published }} | <strong>Prazo de entrega: </strong
+        >{{ project.deliveryTime }} | <strong>Propostas: </strong>{{ project.proposals }}
       </p>
     </div>
   </div>
 
   <p class="infos">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dicta quibusdam perferendis et, minus, odio optio
-    animi praesentium explicabo expedita officiis sed nihil exercitationem labore, excepturi deserunt quam natus quas.
-    Neque autem veritatis quam natus quo temporibus, obcaecati doloribus maxime unde animi. Temporibus quod blanditiis
-    nobis repellat incidunt laudantium fuga maxime velit illum nam, modi, iste dolor et corporis. Quam?
+    {{ project.description }}
   </p>
 
   <div class="habilities">
-    <div class="card">HTML</div>
-    <div class="card">CSS</div>
-    <div class="card">Javascript</div>
+    <div class="card" *ngFor="let hability of project.habilities">{{ hability.name }}</div>
   </div>
 </div>
 
@@ -27,9 +22,9 @@
   <button mat-raised-button class="proposed-button">Proposta</button>
 
   <p class="additional-infos">
-    <span>Categoria: </span> Lojas virtuais<br />
-    <span>Disponibilidade requerida: </span> Meio período<br />
-    <span>Do que você precisa? </span> Um site<br />
-    <span>Tenho atualmente: </span> Wireframe, banco de dados e api.<br />
+    <span>Categoria: </span>{{ project.category }}<br />
+    <span>Disponibilidade requerida: </span>{{ project.availability }}<br />
+    <span>Do que você precisa? </span>{{ project.need }}<br />
+    <span>Tenho atualmente: </span>{{ project.have }}<br />
   </p>
 </div>
