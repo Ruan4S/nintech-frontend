@@ -1,5 +1,7 @@
+import { registerLocaleData } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import ptBr from '@angular/common/locales/pt';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,12 +17,17 @@ import {
   RouteReusableStrategy,
   SharedModule,
 } from '@shared';
+import * as moment from 'moment';
 import { NgBusyModule } from 'ng-busy';
+import { CONSTANTS } from './@shared/constants/constants';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { MaterialModule } from './material.module';
 import { ShellModule } from './shell/shell.module';
+
+registerLocaleData(ptBr);
+moment.locale(CONSTANTS.PAIS.BRASIL);
 
 @NgModule({
   imports: [
@@ -59,6 +66,7 @@ import { ShellModule } from './shell/shell.module';
       provide: RouteReuseStrategy,
       useClass: RouteReusableStrategy,
     },
+    { provide: LOCALE_ID, useValue: 'pt' },
   ],
   bootstrap: [AppComponent],
 })
